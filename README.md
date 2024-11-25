@@ -1,4 +1,4 @@
-## Jogo da Memoria Genius
+## Jogo da Memoria (Genius)
 
 <h3>Lista (equipamentos):</h3>
 
