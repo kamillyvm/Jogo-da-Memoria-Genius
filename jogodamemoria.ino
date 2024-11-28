@@ -146,12 +146,22 @@ byte wait_for_button() {
 }
 
 byte checkButton() {
-  if (digitalRead(BUTTON_RED) == LOW) return CHOICE_RED;
-  else if (digitalRead(BUTTON_GREEN) == LOW) return CHOICE_GREEN;
-  else if (digitalRead(BUTTON_BLUE) == LOW) return CHOICE_BLUE;
-  else if (digitalRead(BUTTON_YELLOW) == LOW) return CHOICE_YELLOW;
+  if (digitalRead(BUTTON_RED) == LOW) {
+    delay(50); // Debounce simples
+    if (digitalRead(BUTTON_RED) == LOW) return CHOICE_RED;
+  } else if (digitalRead(BUTTON_GREEN) == LOW) {
+    delay(50); // Debounce simples
+    if (digitalRead(BUTTON_GREEN) == LOW) return CHOICE_GREEN;
+  } else if (digitalRead(BUTTON_BLUE) == LOW) {
+    delay(50); // Debounce simples
+    if (digitalRead(BUTTON_BLUE) == LOW) return CHOICE_BLUE;
+  } else if (digitalRead(BUTTON_YELLOW) == LOW) {
+    delay(50); // Debounce simples
+    if (digitalRead(BUTTON_YELLOW) == LOW) return CHOICE_YELLOW;
+  }
   return CHOICE_NONE; // Nenhum botão pressionado
 }
+
 
 void play_winner() {
   for (int i = 0; i < 3; i++) {
